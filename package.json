@@ -1,0 +1,72 @@
+{
+	"name": "rawrcommit",
+	"displayName": "RawrCommit",
+	"description": "RawrCommit: Beautify your commits messages 🧪🌈🐞",
+	"version": "1.0.0",
+	"author": {
+		"name": "Laith Alkhaddam",
+		"email": "laith@programmer.net"
+	},
+	"publisher": "Iconical",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/babyico/RawrCommit"
+	},
+	"engines": {
+		"vscode": "^1.75.0"
+	},
+	"galleryBanner": {
+		"color": "#7f61af"
+	},
+	"keywords": [
+		"Emoji Log",
+		"Emoji Log VSCode",
+		"git",
+		"emoji",
+		"commit",
+		"messages"
+	],
+	"categories": [
+		"Other"
+	],
+	"icon": "images/icon.png",
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.EmojiPrefix",
+				"title": "RawrCommit: Beautify your commits 🧪🌈🐞",
+				"icon": {
+					"dark": "images/icon_dark.svg",
+					"light": "images/icon_light.svg"
+				}
+			}
+		],
+		"menus": {
+			"scm/title": [
+				{
+					"when": "scmProvider == git",
+					"command": "extension.EmojiPrefix",
+					"group": "navigation"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.0.1",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "^18.13.0",
+		"@types/vscode": "^1.75.1",
+		"glob": "^8.1.0",
+		"mocha": "^10.2.0",
+		"tslint": "^6.1.3",
+		"typescript": "^4.9.5"
+	}
+}
