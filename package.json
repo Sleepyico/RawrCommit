@@ -2,7 +2,7 @@
 	"name": "rawrcommit",
 	"displayName": "RawrCommit",
 	"description": "RawrCommit: Beautify your commits messages 🧪🌈🐞",
-	"version": "1.1.0-beta",
+	"version": "1.2.0",
 	"author": {
 		"name": "Laith Alkhaddam",
 		"email": "laith@programmer.net"
