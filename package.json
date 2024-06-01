@@ -7,8 +7,12 @@
 		"name": "Laith Alkhaddam",
 		"email": "laith@programmer.net"
 	},
+	"sponsor": {
+		"url": "https://iconical.dev/sponsor"
+	},
 	"publisher": "Iconical",
 	"license": "MIT",
+	"preview": true,
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/babyico/RawrCommit"
@@ -17,7 +21,7 @@
 		"vscode": "^1.75.0"
 	},
 	"galleryBanner": {
-		"color": "#7f61af"
+		"color": "#0a0a0a"
 	},
 	"keywords": [
 		"Emoji Log",
