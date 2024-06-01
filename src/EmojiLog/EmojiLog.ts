@@ -6,7 +6,7 @@ interface Emoji {
 let EmojiLog: Array<Emoji> = [
   {
     emoji: "🌟feat:",
-    description: "Select when creating new things.",
+    description: "Select when creating new things. e.g. a new feature for the users.",
   },
   {
     emoji: "🐞fix:",
@@ -15,7 +15,12 @@ let EmojiLog: Array<Emoji> = [
   {
     emoji: "⚙️refactor:",
     description:
-      "Select when improving piece of code but no new functionality nor new perf occur.",
+      "Select when improving piece of code and refactoring production code. e.g. renaming a variable.",
+  },
+  {
+    emoji: "🍱chore:",
+    description:
+      "Select when updating grunt tasks etc, yet no production code change.",
   },
   {
     emoji: "📝docs:",
@@ -35,7 +40,7 @@ let EmojiLog: Array<Emoji> = [
       "Select when concerning build change or external dependencies.",
   },
   {
-    emoji: "🌈style:",
+    emoji: "💄style:",
     description: "Select when working on stylings and code style.",
   },
   {
