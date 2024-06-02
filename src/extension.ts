@@ -24,12 +24,12 @@ export function activate(context: vscode.ExtensionContext) {
         });
       }
 
-      let nextPage = {
+      const nextPage = {
         label: "See more...↗️",
         description: "",
         emoji: "",
       };
-      let prevPage = {
+      const prevPage = {
         label: "Go Back...↩️",
         description: "",
         emoji: "",
@@ -47,17 +47,14 @@ export function activate(context: vscode.ExtensionContext) {
             );
           });
           if (selectedRepository) {
-            if (selected.emoji !== "⏭️" && selected.emoji !== "⏪️") {
-              prefixCommit(selectedRepository, selected.emoji);
-            }
+            prefixCommit(selectedRepository, selected.emoji);
           }
         } else {
           for (let repo of git!.repositories) {
-            if (selected.emoji !== "⏭️" && selected.emoji !== "⏪️") {
-              prefixCommit(repo, selected.emoji);
-            }
+            prefixCommit(repo, selected.emoji);
           }
         }
+        vscode.commands.executeCommand("workbench.scm.focus");
       }
 
       function handleWindow(tempItems: any) {
@@ -68,14 +65,16 @@ export function activate(context: vscode.ExtensionContext) {
           .then((selected: any) => {
             if (!selected) return;
 
-            if (selected === nextPage) {
-              handleWindow([prevPage, ...items.slice(12)]);
-            }
-            if (selected === prevPage) {
-              handleWindow([...items.slice(0, 12), nextPage]);
-            }
-            if (selected !== nextPage && selected !== prevPage) {
-              handleGit(selected);
+            switch (selected) {
+              case nextPage:
+                handleWindow([prevPage, ...items.slice(12)]);
+                break;
+              case prevPage:
+                handleWindow([...items.slice(0, 12), nextPage]);
+                break;
+              default:
+                handleGit(selected);
+                break;
             }
           });
       }
