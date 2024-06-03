@@ -60,6 +60,7 @@ let EmojiLog: Array<Emoji> = [
     emoji: "🎉new:",
     description: "Select when starting a new project.",
   },
+  // Extra commit emotes
   {
     emoji: "⚠️break:",
     description: "Select when adding change that breaks previous versions.",
@@ -68,7 +69,6 @@ let EmojiLog: Array<Emoji> = [
     emoji: "⏮️revert:",
     description: "Select when going back and rollbacks.",
   },
-  // Extra commit emotes
   {
     emoji: "🚑critical:",
     description: "Select when fixing critical issues.",

@@ -30,12 +30,10 @@ export function activate(context: vscode.ExtensionContext) {
         emoji: "",
       };
       const prevPage = {
-        label: "Go Back...↩️",
+        label: "Go Back...↙️",
         description: "",
         emoji: "",
       };
-
-      let mainItems = [...items.slice(0, 12), nextPage];
 
       function handleGit(selected: any) {
         vscode.commands.executeCommand("workbench.view.scm");
@@ -67,10 +65,10 @@ export function activate(context: vscode.ExtensionContext) {
 
             switch (selected) {
               case nextPage:
-                handleWindow([prevPage, ...items.slice(12)]);
+                handleWindow([prevPage, ...items.slice(13)]);
                 break;
               case prevPage:
-                handleWindow([...items.slice(0, 12), nextPage]);
+                handleWindow([...items.slice(0, 13), nextPage]);
                 break;
               default:
                 handleGit(selected);
@@ -79,7 +77,7 @@ export function activate(context: vscode.ExtensionContext) {
           });
       }
 
-      handleWindow(mainItems);
+      handleWindow([...items.slice(0, 13), nextPage]);
     }
   );
 
